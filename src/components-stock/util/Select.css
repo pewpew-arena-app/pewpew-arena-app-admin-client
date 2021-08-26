@@ -1,0 +1,17 @@
+select {
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border: 1px solid #111;
+  background: transparent;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  width: 90%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('../../resources/img/select-bg.png') no-repeat 96% 0;
+}

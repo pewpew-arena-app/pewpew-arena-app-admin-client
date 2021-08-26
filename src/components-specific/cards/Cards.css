@@ -1,0 +1,143 @@
+.card {
+  /*border: 1px solid blue;*/
+  width: 90%;
+  margin:auto;
+  padding: 3px;
+  position:relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/**** TARGET AND BUTTONS ****/
+
+.card-target {
+  /*border: 2px solid black;*/
+  /*font-weight: bold;*/
+  text-align: center;
+  font-size: 20px;
+  width: 29px;
+  height: 28px;
+  border-radius: 20px;
+  /*border-width: 3px !important;*/
+  padding-top: 2px;
+}
+
+.card-discard-icon {
+  width: 25px;
+  height: 25px;
+  background-image: url('../../resources/img/discard-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*border: 2px solid black;*/
+  /*padding-top:2px;*/
+  position:absolute;
+  top: 13px;
+  right: 33%;
+}
+
+.card-banish-icon {
+  width:25px;
+  height: 25px;
+  background-image: url('../../resources/img/banish-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*border: 2px solid black;*/
+  /*padding-top:2px;*/
+  position:absolute;
+  top: 13px;
+  right: 19%;
+}
+
+/**** HEADER-SPECIFIC CLASSES ****/
+
+.card-header {
+  border: 2px solid black;
+  border-radius: 3px;
+  width:98%;
+  /*padding-top:11px;*/
+  height: 50px;
+  margin:auto;
+  text-align: left;
+  /*font-weight: bold;*/
+  position: relative;
+}
+
+.card-label {
+  padding: 16px 3px 5px 5px;
+  width: 57%;
+  font-size: 15px;
+}
+
+.card-target-header {
+  position: absolute;
+  top:0px;
+  bottom:0px;
+  right:0px;
+}
+
+.card-target-container-header {
+  position:absolute;
+  top: 8px;
+  right: 7px;
+  bottom: 6px;
+}
+
+/**** BODY-SPECIFIC CLASSES ****/
+
+.card-body {
+  border: 2px solid black;
+  border-radius: 3px;
+  width:98%;
+  height: 200px;
+  margin:auto;
+  margin-top: 2px;
+  position:relative;
+}
+
+.card-body-subheader {
+  padding: 9px 8px 11px 8px;
+  font-size: 15px;
+  text-align:left;
+  margin:auto;
+  position:absolute;
+  top: 0px;
+  right:0px;
+  left:0px;
+  height: 14px;
+  /*bottom: 0px;*/
+  border-bottom: 2px solid black;
+}
+
+.card-body-text {
+  font-size: 14px;
+  text-align:left;
+  margin:auto;
+  position:absolute;
+  top: 45px;
+  bottom: 0px;
+  right: 10px;
+  left: 10px;
+}
+
+.card-target-container-body-right {
+  position:absolute;
+  right:7px;
+  bottom:5px;
+}
+
+.card-target-container-body-left {
+  position:absolute;
+  left:7px;
+  bottom:5px;
+}
+
+.card-target-body-right {
+  position:absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.card-target-body-left {
+  position:absolute;
+  bottom: 0px;
+  left: 0px;
+}

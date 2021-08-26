@@ -1,0 +1,39 @@
+.middle-button {
+  margin:auto;
+  width:90%;
+  height: 30px;
+  margin-top:15px;
+  margin-bottom:10px;
+  padding-top:9px;
+  position:relative;
+  font-size: 18px;
+  border: 2px solid black;
+}
+
+.button-black {
+  color: white;
+  background-color: black;
+}
+
+.button-white {
+  color: black;
+  background-color: white;
+}
+
+.button-black-disabled {
+  background-color: grey;
+  color: black;
+}
+
+.button-white-disabled {
+  color: #ecf0f1;
+  border: 2px solid #ecf0f1;
+}
+
+.extended-link {
+  position:absolute;
+  /*top:0px;*/
+  right:0px;
+  /*bottom:0px;*/
+  left:0px;
+}
