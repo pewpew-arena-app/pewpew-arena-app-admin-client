@@ -3,6 +3,15 @@ import './Cards.css'
 
 class TargetNumber extends Component {
 
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    console.log("Target number change to " + event.target.value);
+    this.props.handleNumberChange(event.target.value);
+  }
 
 
   render() {
@@ -10,8 +19,14 @@ class TargetNumber extends Component {
     let innerClassName = "";
     let targetNumberLabel = "";
     if(this.props.position==="HEADER") {
-      outerClassName = "card-target-container-header";
-      innerClassName = "card-target card-target-header";
+      if(this.props.type=="FIGURE") {
+        outerClassName = "card-figure-container-header";
+        innerClassName = "card-target card-figure-header";
+      }
+      else {
+        outerClassName = "card-target-container-header";
+        innerClassName = "card-target card-target-header";
+      }
     }
     else if(this.props.position==="BODY-RIGHT") {
       outerClassName = "card-target-container-body-right";
@@ -21,6 +36,8 @@ class TargetNumber extends Component {
       outerClassName = "card-target-container-body-left";
       innerClassName = "card-target card-target-body-left";
     }
+
+
     if(this.props.type=="NUMBER") {
       targetNumberLabel = this.props.hitTarget;
     }
@@ -28,11 +45,19 @@ class TargetNumber extends Component {
       let length = this.props.hitTarget;
       Array.from({length}).forEach((v, i) => {targetNumberLabel+="I"})
     }
+
+    const editableLabel = (
+      <input className = {innerClassName} style = {this.props.borderStyle} value={this.props.hitTarget} onChange={this.handleChange}/>
+    );
+    const nonEditableLabel = (
+      <div className = {innerClassName} style = {this.props.borderStyle}>
+        {targetNumberLabel}
+      </div>
+    );
+
     return (
       <div className = {outerClassName}>
-        <div className = {innerClassName} style = {this.props.borderStyle}>
-          {targetNumberLabel}
-        </div>
+        {this.props.isEditable ? editableLabel : nonEditableLabel}
       </div>
     );
   }

@@ -59,12 +59,19 @@
   text-align: left;
   /*font-weight: bold;*/
   position: relative;
+  display: flex;
 }
 
 .card-label {
-  padding: 16px 3px 5px 5px;
+  padding: 5px 3px 5px 5px;
   width: 57%;
   font-size: 15px;
+  z-index: 10;
+  vertical-align: middle;
+  align-self: center;
+  display: flex;
+  height: 20px;
+  margin-left: 5px;
 }
 
 .card-target-header {
@@ -79,6 +86,20 @@
   top: 8px;
   right: 7px;
   bottom: 6px;
+}
+
+.card-figure-header {
+  position: absolute;
+  top:0px;
+  bottom:0px;
+  right: 19%;
+}
+
+.card-figure-container-header {
+  position:absolute;
+  top: 8px;
+  right: 7px;
+  right: 19%;
 }
 
 /**** BODY-SPECIFIC CLASSES ****/
@@ -109,13 +130,14 @@
 
 .card-body-text {
   font-size: 14px;
-  text-align:left;
-  margin:auto;
-  position:absolute;
+  text-align: left;
+  margin: auto;
+  position: absolute;
   top: 45px;
-  bottom: 0px;
+  bottom: 45px;
   right: 10px;
   left: 10px;
+  width: 90%;
 }
 
 .card-target-container-body-right {

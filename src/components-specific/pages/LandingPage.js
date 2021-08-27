@@ -46,6 +46,8 @@ class LandingPage extends Component {
     const infoText = "Deck Manager Admin versione "+appVersion;
     const alignLeft = {align : "left"};
     if(this.state.availableVersions) {
+      console.log("About to render with version " + this.state.currentlySelectedVersion.id);
+      const infoTextQueryParam = "?currentlySelectedVersion="+this.state.currentlySelectedVersion.id;
       return (
         <div className = "page">
           <InfoTab text={infoText}/>
@@ -54,8 +56,8 @@ class LandingPage extends Component {
             options={this.state.availableVersions}
             changeHandler = {this.versionChangeHandler}
             selected={this.state.currentlySelectedVersion}/>
-          <CoolLink to={{pathName : "/manage-characters", state : {currentlySelectedVersion : this.state.currentlySelectedVersion}}} buttonText = "GESTISCI PERSONAGGI"/>
-          <CoolLink to={{pathName : "/manage-cards", state : {currentlySelectedVersion : this.state.currentlySelectedVersion}}} buttonText = "GESTISCI CARTE"/>
+          <CoolLink to={{pathname : "/manage-characters", search : infoTextQueryParam}} buttonText = "GESTISCI PERSONAGGI"/>
+          <CoolLink to={{pathname : "/manage-cards",  search : infoTextQueryParam}} buttonText = "GESTISCI CARTE"/>
           <CoolLink to="/manage-everything" buttonText = "GESTISCI TUTTO"/>
         </div>
       );

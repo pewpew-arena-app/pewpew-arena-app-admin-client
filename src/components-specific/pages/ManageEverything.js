@@ -4,7 +4,7 @@ import './Page.css'
 class ManageEverything extends Component {
 
   render() {
-    const verticallyCentered = {"line-height" : "70vh"};
+    const verticallyCentered = {"lineHeight" : "70vh"};
     return (
       <div className = "page">
         <div style={verticallyCentered}>

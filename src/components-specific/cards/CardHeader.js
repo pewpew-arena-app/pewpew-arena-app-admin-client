@@ -11,18 +11,46 @@ class CardHeader extends Component {
     };
   }
 */
+constructor (props) {
+  super(props);
+  this.handleInputChange = this.handleInputChange.bind(this);
+  this.handleHitTargetChange = this.handleHitTargetChange.bind(this);
+  this.handleFigureChange = this.handleFigureChange.bind(this);
+}
+
+  handleInputChange(event) {
+    console.log("change event to " + event.target.value);
+    this.props.handleHeaderInputChange(event.target.value);
+    //console.log(event);
+  }
+  handleHitTargetChange(updatedValue) {
+      this.props.handleHitTargetChange(updatedValue);
+      //console.log(event);
+  }
+  handleFigureChange(updatedValue) {
+    this.props.handleFigureChange(updatedValue);
+      //console.log(event);
+  }
   render() {
 
     const borderStyle = {
       border: '3px solid '+this.props.themeColor
     };
 
-    return (
-      <div className = "card-header">
+    const editableHeaderLabel = (
+      <input className = "card-label" defaultValue={this.props.title} onChange={this.handleInputChange} onClick={()=>{}}/>
+    );
 
-          <div className = "card-label" onClick = {this.props.toggleFunction}>
+    const nonEditableHeaderLabel = (
+      <div className = "card-label" onClick = {this.props.toggleFunction}>
             {this.props.title}
-          </div>
+      </div>
+    );
+
+    return (
+      <div className = "card-header" onClick = {this.props.toggleFunction}>
+
+          {this.props.isEditable ? editableHeaderLabel : nonEditableHeaderLabel}
           {
             this.props.isExpanded
             ? null
@@ -30,14 +58,21 @@ class CardHeader extends Component {
               hitTarget = {this.props.hitTarget}
               borderStyle = {borderStyle}
               position = "HEADER"
-              type = "NUMBER"/>
+              type = "NUMBER"
+              isEditable = {this.props.isEditable}
+              handleNumberChange = {this.handleHitTargetChange}/>
           }
-          <div
-            className = "card-discard-icon"
-            onClick = {this.props.discardFunction.bind(this,this.props.index)}></div>
-          <div
-            className = "card-banish-icon"
-            onClick = {this.props.banishFunction.bind(this,this.props.index)}></div>
+          {
+            this.props.isExpanded
+            ? null
+            : <TargetNumber
+              hitTarget = {this.props.figure}
+              borderStyle = {borderStyle}
+              position = "HEADER"
+              type = "FIGURE"
+              isEditable = {this.props.isEditable}
+              handleNumberChange = {this.handleFigureChange}/>
+          }
 
       </div>
     );
