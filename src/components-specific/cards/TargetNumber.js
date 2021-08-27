@@ -47,7 +47,7 @@ class TargetNumber extends Component {
     }
 
     const editableLabel = (
-      <input className = {innerClassName} style = {this.props.borderStyle} value={this.props.hitTarget} onChange={this.handleChange}/>
+      <input className = {innerClassName} style = {this.props.borderStyle} value={this.props.hitTarget} onChange={this.handleChange} onClick={(event)=>{event.stopPropagation()}}/>
     );
     const nonEditableLabel = (
       <div className = {innerClassName} style = {this.props.borderStyle}>

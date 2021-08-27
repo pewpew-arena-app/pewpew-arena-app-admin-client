@@ -38,7 +38,7 @@ constructor (props) {
     };
 
     const editableHeaderLabel = (
-      <input className = "card-label" defaultValue={this.props.title} onChange={this.handleInputChange} onClick={()=>{}}/>
+      <input className = "card-label" defaultValue={this.props.title} onChange={this.handleInputChange} onClick={(event)=>{event.stopPropagation()}}/>
     );
 
     const nonEditableHeaderLabel = (
