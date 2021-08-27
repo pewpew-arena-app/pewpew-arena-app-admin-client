@@ -17,6 +17,7 @@ class AppView extends Component {
         <div className = "app-view">
           <AppViewHeader />
           <Route exact path="/" component={LandingPage}/>
+          <Route path="/manage-characters" component={ManageEverything}/>
           <Route path="/manage-cards" component={ManageCards}/>
           <Route path="/manage-everything" component={ManageEverything}/>
         </div>
