@@ -26,7 +26,7 @@ class LandingPage extends Component {
       if(getVersionsResponse.gameVersions && getVersionsResponse.gameVersions.length>0) {
         this.setState({
           availableVersions: getVersionsResponse.gameVersions,
-          currentlySelectedVersion: getVersionsResponse.gameVersions[0]
+          currentlySelectedVersion: getVersionsResponse.gameVersions[0].id
         })
       }
       else {
@@ -38,7 +38,7 @@ class LandingPage extends Component {
 
   versionChangeHandler(event) {
     console.log("You changed the version, big man --> " + event.target.value);
-    this.setState({currentlySelectedVersion:event.target.value});
+    this.setState({currentlySelectedVersion : event.target.value});
   }
 
   render() {
@@ -46,8 +46,8 @@ class LandingPage extends Component {
     const infoText = "Deck Manager Admin versione "+appVersion;
     const alignLeft = {align : "left"};
     if(this.state.availableVersions) {
-      console.log("About to render with version " + this.state.currentlySelectedVersion.id);
-      const infoTextQueryParam = "?currentlySelectedVersion="+this.state.currentlySelectedVersion.id;
+      console.log("About to render with version " + this.state.currentlySelectedVersion);
+      const infoTextQueryParam = "?currentlySelectedVersion="+this.state.currentlySelectedVersion;
       return (
         <div className = "page">
           <InfoTab text={infoText}/>

@@ -27,8 +27,12 @@ class ManageCards extends Component {
     this.handleFigureChange = this.handleFigureChange.bind(this);
   }
 
+  buildGetCardsUrl(gameVersion) {
+    return ENDPOINTS.CARDS + "?gameVersion="+gameVersion;
+  }
+
   fetchCards() {
-    fetch(ENDPOINTS.CARDS)
+    fetch(this.buildGetCardsUrl(this.state.queryParams.get("currentlySelectedVersion")))
     .then(res => res.json())
     .then((getCardsResponse) => {
       this.setState({
