@@ -7,6 +7,7 @@ import LandingPage from '../../components-specific/pages/LandingPage'
 import {BrowserRouter as Router,Route,Link, BrowserRouter} from 'react-router-dom';
 import ManageEverything from '../../components-specific/pages/ManageEverything';
 import ManageCards from '../../components-specific/pages/ManageCards';
+import NewVersionPage from '../../components-specific/pages/NewVersionPage';
 
 class AppView extends Component {
 
@@ -20,6 +21,7 @@ class AppView extends Component {
           <Route path="/manage-characters" component={ManageEverything}/>
           <Route path="/manage-cards" component={ManageCards}/>
           <Route path="/manage-everything" component={ManageEverything}/>
+          <Route path="/generate-new-version" component={NewVersionPage}/>
         </div>
       </BrowserRouter>
     );

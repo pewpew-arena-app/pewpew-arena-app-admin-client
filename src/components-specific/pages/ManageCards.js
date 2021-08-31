@@ -114,7 +114,7 @@ class ManageCards extends Component {
   }
 
   render() {
-    const infoMessage = "Tutte le carte di tutti i personaggi, versione "+this.state.queryParams.get("currentlySelectedVersion");
+    const infoMessage = "Tutte le carte di tutti i personaggi, versione "+this.state.queryParams.get("currentlySelectedVersion")+". Le modifiche apportate avranno effetto solo su questa versione.";
     if(this.state.cards && this.state.cards.length>0) {
       return (
         <div className = "app-view-body">

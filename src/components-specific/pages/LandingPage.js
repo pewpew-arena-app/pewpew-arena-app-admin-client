@@ -47,7 +47,7 @@ class LandingPage extends Component {
     const alignLeft = {align : "left"};
     if(this.state.availableVersions) {
       console.log("About to render with version " + this.state.currentlySelectedVersion);
-      const infoTextQueryParam = "?currentlySelectedVersion="+this.state.currentlySelectedVersion;
+      const queryParamsToNextPage = "?currentlySelectedVersion="+this.state.currentlySelectedVersion+"&versions="+JSON.stringify(this.state.availableVersions);
       return (
         <div className = "page">
           <InfoTab text={infoText}/>
@@ -56,9 +56,11 @@ class LandingPage extends Component {
             options={this.state.availableVersions}
             changeHandler = {this.versionChangeHandler}
             selected={this.state.currentlySelectedVersion}/>
-          <CoolLink to={{pathname : "/manage-characters", search : infoTextQueryParam}} buttonText = "GESTISCI PERSONAGGI"/>
-          <CoolLink to={{pathname : "/manage-cards",  search : infoTextQueryParam}} buttonText = "GESTISCI CARTE"/>
+          <CoolLink to={{pathname : "/manage-characters", search : queryParamsToNextPage}} buttonText = "GESTISCI PERSONAGGI"/>
+          <CoolLink to={{pathname : "/manage-cards",  search : queryParamsToNextPage}} buttonText = "GESTISCI CARTE"/>
           <CoolLink to="/manage-everything" buttonText = "GESTISCI TUTTO"/>
+          <label>Oppure</label>
+          <CoolLink to={{pathname : "/generate-new-version", search : queryParamsToNextPage}} buttonText = "CREA NUOVA VERSIONE"/>
         </div>
       );
     }
