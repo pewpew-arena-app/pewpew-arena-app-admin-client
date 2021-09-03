@@ -1,6 +1,6 @@
 {
-    "CHARACTERS" : "https://sh3spi7s2k.execute-api.eu-south-1.amazonaws.com/Prod/characters",
-    "GAME_RULES" : "https://sh3spi7s2k.execute-api.eu-south-1.amazonaws.com/Prod/game-rules",
-    "VERSIONS" : "https://sh3spi7s2k.execute-api.eu-south-1.amazonaws.com/Prod/versions",
-    "CARDS" : "https://sh3spi7s2k.execute-api.eu-south-1.amazonaws.com/Prod/cards"
+    "CHARACTERS" : "https://2zacdjx077.execute-api.us-east-1.amazonaws.com/Prod/characters",
+    "GAME_RULES" : "https://2zacdjx077.execute-api.us-east-1.amazonaws.com/Prod/game-rules",
+    "VERSIONS" : "https://2zacdjx077.execute-api.us-east-1.amazonaws.com/Prod/versions",
+    "CARDS" : "https://2zacdjx077.execute-api.us-east-1.amazonaws.com/Prod/cards"
 }
